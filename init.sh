@@ -5,9 +5,9 @@ wp config create --dbprefix="$DB_PREFIX" \
                  --dbname="$DB_NAME" \
                  --dbuser="$DB_USER" \
                  --dbpass="$DB_PASSWORD" \
-                 --dbhost="$DB_HOST"
+                 --dbhost="wordpress_db"
 wp db create
-wp core install --url="http://localhost:3000" \
+wp core install --url="http://localhost:$WP_PORT" \
                 --title="Example" \
                 --admin_user="$WP_USER" \
                 --admin_password="$WP_PASSWORD" \
