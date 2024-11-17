@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
 
 wp core download
-wp config create --dbprefix=wp_ \
-                 --dbname=wordpress \
-                 --dbuser=root \
-                 --dbpass=password \
-                 --dbhost=wordpress_db
+wp config create --dbprefix="$DB_PREFIX" \
+                 --dbname="$DB_NAME" \
+                 --dbuser="$DB_USER" \
+                 --dbpass="$DB_PASSWORD" \
+                 --dbhost="$DB_HOST"
 wp db create
 wp core install --url="http://localhost:3000" \
-                --title="Development" \
-                --admin_user="admin" \
-                --admin_password="admin" \
+                --title="Example" \
+                --admin_user="$WP_USER" \
+                --admin_password="$WP_PASSWORD" \
                 --admin_email="email@example.com"
 wp post generate --count=50
-wp user generate --count=10
