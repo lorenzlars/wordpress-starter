@@ -1,12 +1,14 @@
 volumes:
-  html:
+  data:
+    external: false
 
 services:
   app:
     image: wordpress
     container_name: wordpress_app
     volumes:
-      - html:/var/www/html
+      - data:/var/www/html
+      - ./src:/var/www/html/wp-content
     depends_on:
       db:
         condition: service_healthy
@@ -37,7 +39,7 @@ services:
     image: wordpress:cli
     volumes:
       - ./init.sh:/init.sh
-      - html:/var/www/html
+      - data:/var/www/html
     entrypoint: ["sh", "-c", "/init.sh"]
     depends_on:
       db:
