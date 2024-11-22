@@ -9,9 +9,7 @@ of WordPress. WordPress will be reachable on port `3000` and the login user is `
 password `admin`. This can be changed by editing the values in `.env`.
 
 > [!IMPORTANT]  
-> Don't skip this step!
-
-After stopping the containers you need to run `docker compose down --volumes` to clean everything
-up. 
+> After stopping the containers you need to run `docker compose down --volumes` to clean everything
+up. Don't skip this step!
 
 For a more detailed description look at: https://larslorenz.dev/blog/wordpress-starter-template
