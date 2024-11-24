@@ -12,7 +12,7 @@ services:
     depends_on:
       db:
         condition: service_healthy
-      cli-init:
+      cli-pre:
         condition: service_completed_successfully
     ports:
       - "${WP_PORT}:80"
@@ -32,7 +32,7 @@ services:
       retries: 3
       start_interval: 3s
 
-  cli-init:
+  cli-pre:
     image: wordpress:cli
     container_name: wordpress_cli_init
     volumes:
