@@ -3,7 +3,7 @@
 wp core download
 wp config create --dbprefix="$DB_PREFIX" \
                  --dbname="$DB_NAME" \
-                 --dbuser="$DB_USER" \
+                 --dbuser="root" \
                  --dbpass="$DB_PASSWORD" \
                  --dbhost="wordpress_db"
 wp db create
