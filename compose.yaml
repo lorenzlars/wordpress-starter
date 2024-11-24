@@ -4,7 +4,7 @@ volumes:
 
 services:
   app:
-    image: wordpress
+    build: ./.docker
     container_name: wordpress_app
     volumes:
       - data:/var/www/html
