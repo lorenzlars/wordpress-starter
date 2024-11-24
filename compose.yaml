@@ -34,7 +34,7 @@ services:
 
   cli-pre:
     image: wordpress:cli
-    container_name: wordpress_cli_init
+    container_name: wordpress_cli_pre
     volumes:
       - ./.docker/init.sh:/init.sh
       - data:/var/www/html
